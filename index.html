@@ -5,53 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/optionbox-basic.css">
     <title>optionsjs</title>
     <style>
         body {
             color: gray;
             background-color: silver;
             font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .optionbox {
-            display: inline-block;
-            overflow-x: auto;
-            overflow-y: hidden;
-            vertical-align: middle;
-            color: black;
-            background-color: #fff;
-            border: solid 1px gray;
-        }
-
-        .optionbox-label {
-            display: inline-block;
-            position: relative;
-            padding: .25em 1em .25em 2em;
-        }
-
-        .optionbox-button {
-            position: absolute;
-            top: .25em;
-            left: .25em;
-        }
-
-        .optionbox.selected .optionbox-button,
-        .optionbox.selected .optionbox-label {
-            display: none;
-        }
-
-        .optionbox.selected .optionbox-label.selected {
-            display: inline-block;
-            padding: .25em 2.5em .25em .5em;
-        }
-
-        .optionbox.selected .selected::after {
-            content: "\22C5 \22C5 \22C5";
-            color: gray;
-            font-size: 1.5em;
-            position: absolute;
-            top: 0;
-            right: .25em;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -60,7 +21,7 @@
     <div class="boxme">Blah</div>
     <div>
         <label for="houseID">Sort yourself</label>
-        <select name="houseNAME" id="houseID" class="boxme">
+        <select name="houseNAME" id="houseID">
             <option value="gryfindor">Gryffindor</option>
             <option value="hufflepuff">Hufflepuff</option>
             <option value="ravenclaw">Ravenclaw</option>
@@ -68,7 +29,7 @@
         </select>
     </div>
 
-    <div>
+    <!-- <div>
         <label for="wizardID">Identify yourself</label>
         <select name="wizardNAME" id="wizardID">
             <option value="harry">Harry</option>
@@ -79,7 +40,7 @@
         <label for="title">Identify yourself</label>
         <select name="title" id="title" class="boxme">
             <option value="mr">Mr</option>
-            <option value="miss">miss</option>
+            <option value="Miss">Miss</option>
             <option value="Mrs">Mrs</option>
             <option value="Doctor">Doctor</option>
             <option value="Proffessor">Proffessor</option>
@@ -91,12 +52,12 @@
             <option value="Lord">Lord</option>
             <option value="Lady">Lady</option>
         </select>
-    </div>
+    </div> -->
 </body>
 
 <script src="optionbox.js"></script>
 <script>
-    optionbox.init(".boxme");
+    optionbox.init();
 </script>
 
 </html>

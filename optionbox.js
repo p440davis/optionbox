@@ -2,7 +2,9 @@
 
 const optionbox = {
     init: selector => {
-        let elements = document.querySelectorAll(selector);
+        let elements = selector
+            ? document.querySelectorAll(selector)
+            : document.querySelectorAll("select");
         let selects = [];
         if (elements.length) {
             [].forEach.call(elements, element => {

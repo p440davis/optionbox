@@ -1,0 +1,52 @@
+.optionbox {
+    display: inline-block;
+    color: black;
+    background-color: white;
+    border: solid 1px gray;
+}
+
+.optionbox-label {
+    display: block;
+    position: relative;
+    padding: 0.25em 0.5em 0.25em 2em;
+}
+
+.optionbox-button {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    display: none;
+}
+
+.optionbox-label.selected {
+    display: inline-block;
+    padding: 0.25em 2em 0.25em 0.5em;
+}
+
+.optionbox.selected .optionbox-label:not(.selected) {
+    display: none;
+}
+
+.optionbox-label:not(.selected)::before {
+    content: "";
+    position: absolute;
+    top: 0.4em;
+    left: 0.6em;
+    width: 0.6em;
+    height: 0.6em;
+    border: 1.2px solid gray;
+    border-radius: 0.6em;
+    background-color: gainsboro;
+}
+
+.optionbox-label.selected::after {
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    right: 0.3em;
+    width: 1px;
+    height: 1px;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.5em solid gray;
+}

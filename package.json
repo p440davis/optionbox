@@ -1,0 +1,31 @@
+{
+  "name": "optionbox",
+  "version": "0.1.0",
+  "description": "Effortlessly transform your <select> dropdowns into user-friendly option boxes and style them your way!",
+  "main": "docs/index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p440davis/optionbox.git"
+  },
+  "keywords": [
+    "select",
+    "option",
+    "dropdown",
+    "radio",
+    "input",
+    "ui",
+    "ux"
+  ],
+  "author": "Pete Davis",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/p440davis/optionbox/issues"
+  },
+  "homepage": "https://github.com/p440davis/optionbox#readme"
+}

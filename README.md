@@ -22,5 +22,5 @@ If you would like to get into the code, here's what you'll need to get started
 2.  Fork the repo and clone it to your computer
 3.  Run `npm i` to install your dev dependencies
 4.  Create yourself a branch and do something awesome
-5.  To compile the js file, run `./node_modules/.bin/rollup`
+5.  To compile and watch js changes, run `npm run dev`
 6.  Open a pull request with a full explanation of your work

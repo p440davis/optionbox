@@ -16,7 +16,8 @@ Effortlessly transform your &lt;select> drowdowns into user friendly option boxe
 
 Firstly, feel free to create issues containing question, bugs or enhancement suggestions. The status of each issue will be kept up-to-date in the relevent project.
 
-If you would like to share a new optionbox design, fork our codepen starter and show us your css skills!
+If you would like to share a new optionbox design, fork our "optionbox starter template" on codepen and show us your css skills!
+[codepen.io/collection/AvmYGd/](https://codepen.io/collection/AvmYGd/)
 
 If you would like to help improve the js, here's what you'll need to get started:
 

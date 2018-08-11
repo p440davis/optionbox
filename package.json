@@ -29,6 +29,10 @@
   },
   "homepage": "https://github.com/p440davis/optionbox#readme",
   "devDependencies": {
-    "rollup": "^0.63.5"
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "rollup": "^0.63.5",
+    "rollup-plugin-babel": "^3.0.7"
   }
 }

@@ -38,7 +38,7 @@ const core = {
   },
 
   replicate(options, name) {
-    let content = ``;
+    let content = "";
 
     [].forEach.call(options, option => {
       content += `

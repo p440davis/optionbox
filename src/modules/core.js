@@ -16,7 +16,7 @@ const core = {
           );
       });
       this.create(selects);
-      this.listen(document.querySelectorAll(".optionbox-button"));
+      this.listen(document.querySelectorAll(".optionbox-radio"));
     }
   },
 
@@ -41,50 +41,53 @@ const core = {
     let content = ``;
 
     [].forEach.call(options, option => {
-      content += `<label class="optionbox-label">
-                <input type="radio" name="${name}-options" class="optionbox-button" 
-                    data-optionbox-name="${name}"
-                    data-optionbox-value="${option.value}">
-                    
-                ${option.innerHTML}
-                </label>`;
+      content += `
+        <label class="optionbox-item">
+          <input
+            type="radio"
+            class="optionbox-radio"
+            name="${name}-options"
+            data-optionbox-name="${name}"
+            data-optionbox-value="${option.value}">
+          ${option.innerHTML}
+        </label>`;
     });
 
     return content;
   },
 
-  listen(elements) {
-    [].forEach.call(elements, optionButton => {
-      optionButton.onclick = () => {
-        let name = optionButton.dataset.optionboxName;
-        let value = optionButton.dataset.optionboxValue;
-        this.select(optionButton, name, value);
+  listen(radios) {
+    [].forEach.call(radios, radio => {
+      radio.onclick = () => {
+        let name = radio.dataset.optionboxName;
+        let value = radio.dataset.optionboxValue;
+        this.select(radio, name, value);
       };
     });
   },
 
-  select(optionButton, name, value) {
+  select(radio, name, value) {
     let select = document.querySelector(`[name=${name}]`);
-    let optionLabel = optionButton.closest(".optionbox-label");
-    let optionsBox = optionButton.closest(".optionbox");
+    let optionItem = radio.closest(".optionbox-item");
+    let optionsBox = radio.closest(".optionbox");
     let optionSiblings = optionsBox.querySelectorAll(
-      ".optionbox-button:not(:checked)"
+      ".optionbox-radio:not(:checked)"
     );
 
     if (select.value != value) {
       // select if not previously selected
       select.value = value;
-      optionLabel.classList.add("selected");
-      optionsBox.classList.add("selected");
+      optionItem.classList.add("selected");
+      optionsBox.classList.add("closed");
       [].forEach.call(optionSiblings, sibling =>
         sibling.closest("label").classList.remove("selected")
       );
     } else {
       // deselect if previously selected
       select.selectedIndex = -1;
-      optionButton.checked = false;
-      optionLabel.classList.remove("selected");
-      optionsBox.classList.remove("selected");
+      radio.checked = false;
+      optionItem.classList.remove("selected");
+      optionsBox.classList.remove("closed");
     }
   }
 };

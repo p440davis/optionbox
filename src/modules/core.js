@@ -24,7 +24,6 @@ const core = {
     selects.forEach(select => {
       let optionsBox = document.createElement("span");
 
-      optionsBox.id = select.id;
       optionsBox.classList.add("optionbox");
       optionsBox.innerHTML = this.replicate(
         select.querySelectorAll("option"),

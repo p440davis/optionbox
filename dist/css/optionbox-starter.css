@@ -12,9 +12,6 @@
 }
 
 .optionbox-button {
-    position: absolute;
-    top: 0.25em;
-    left: 0.25em;
     display: none;
 }
 
@@ -27,6 +24,7 @@
     display: none;
 }
 
+/* CIRCULAR BUTTON ICON */
 .optionbox-label:not(.selected)::before {
     content: "";
     position: absolute;
@@ -39,13 +37,14 @@
     background-color: gainsboro;
 }
 
+/* DOWN ARROW ICON */
 .optionbox-label.selected::after {
     content: "";
     position: absolute;
     top: 0.6em;
     right: 0.3em;
-    width: 1px;
-    height: 1px;
+    width: 0;
+    height: 0;
     border-left: 0.3em solid transparent;
     border-right: 0.3em solid transparent;
     border-top: 0.5em solid gray;

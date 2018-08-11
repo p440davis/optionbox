@@ -1,12 +1,13 @@
 {
   "name": "optionbox",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Effortlessly transform your <select> dropdowns into user-friendly option boxes and style them your way!",
   "main": "docs/index.html",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "dev": "rollup -c --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +34,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "rollup": "^0.63.5",
-    "rollup-plugin-babel": "^3.0.7"
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-watch": "^4.3.1"
   }
 }

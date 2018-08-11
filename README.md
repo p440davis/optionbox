@@ -14,13 +14,19 @@ Effortlessly transform your &lt;select> drowdowns into user friendly option boxe
 
 ## Contributing
 
-Firstly, feel free to create issues containing question, bugs or enhancement suggestions. The status of each issue will be kept up-to-date in the relevent project.
+### Issues, questions and suggestions
+Feel free to create an issue if you have a question, find a bug or want to suggest an enhancement.
 
-If you would like to get into the code, here's what you'll need to get started
+### CSS skills
+To contribute your own optionbox styles, fork our "optionbox starter template" on codepen and make the css your own!
+[codepen.io/collection/AvmYGd/](https://codepen.io/collection/AvmYGd/)
+
+### JS skills
+If you would like to help improve the js, here's what you'll need to get started:
 
 1.  Get Node version 8 or higher installed on your computer
 2.  Fork the repo and clone it to your computer
 3.  Run `npm i` to install your dev dependencies
-4.  Create yourself a branch and do something awesome
-5.  To compile the js file, run `./node_modules/.bin/rollup`
+4.  Create a branch for your changes
+5.  To compile and watch js changes, run `npm run dev`
 6.  Open a pull request with a full explanation of your work

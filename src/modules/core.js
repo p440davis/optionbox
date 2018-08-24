@@ -16,8 +16,8 @@ const core = {
                     );
             });
             this.create(selects);
-            //this.preselect();
             this.listen(document.querySelectorAll(".optionbox-radio"));
+            this.preselect();
         }
     },
 
@@ -58,17 +58,6 @@ const core = {
         return content;
     },
 
-    preselect() {
-        let radios = document.querySelectorAll(
-            ".optionbox-item [checked=true]"
-        );
-        [].forEach.call(radios, radio => {
-            let name = radio.dataset.optionboxName;
-            let value = radio.dataset.optionboxValue;
-            this.select(radio, name, value);
-        });
-    },
-
     listen(radios) {
         [].forEach.call(radios, radio => {
             radio.onclick = () => {
@@ -102,6 +91,15 @@ const core = {
             optionItem.classList.remove("selected");
             optionsBox.classList.remove("closed");
         }
+    },
+
+    preselect() {
+        let checked = document.querySelectorAll(
+            ".optionbox-radio[checked=true]"
+        );
+        [].forEach.call(checked, radio => {
+            radio.click();
+        });
     }
 };
 

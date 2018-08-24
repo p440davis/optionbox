@@ -34,7 +34,7 @@ const core = {
             select.insertAdjacentElement("beforebegin", optionsBox);
 
             select.selectedIndex = -1;
-            //select.hidden = true;
+            select.hidden = true;
         });
     },
 

@@ -1,6 +1,6 @@
 # optionbox
 
-Effortlessly transform your &lt;select> drowdowns into user friendly option boxes that put you in control of styling.
+Effortlessly transform your &lt;select&gt; drowdowns into user friendly option boxes that put you in control of styling.
 
 ## Version 0.1.1
 

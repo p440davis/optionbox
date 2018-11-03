@@ -1,0 +1,32 @@
+.sans {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    font-size: 20px;
+}
+
+.cen {
+    text-align: center;
+}
+
+.col {
+    max-width: 36rem;
+    margin: auto;
+}
+
+.pad {
+    padding: 1em;
+}
+
+.light {
+    background-color: ghostwhite;
+}
+
+.inline {
+    display: inline;
+}
+
+.normal {
+    font-weight: normal;
+}

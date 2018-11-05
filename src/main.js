@@ -1,3 +1,2 @@
-import { core } from "./modules/core";
-
-core.init();
+import { load } from "./modules/load";
+load.init();

@@ -1,4 +1,4 @@
-import { persist } from "./persist";
+import { persist } from "./persist.js";
 
 const update = {
     listen(radios) {

@@ -1,12 +1,20 @@
-import { update } from "./update";
-import { persist } from "./persist";
+import { update } from "./update.js";
+import { persist } from "./persist.js";
 
 const load = {
-    init(selector) {
-        let elements = selector
+    init(settings) {
+        let selector;
+        let elements;
+        let selects = [];
+
+        if (settings) {
+            selector = settings.select;
+        }
+
+        elements = selector
             ? document.querySelectorAll(selector)
             : document.querySelectorAll("select");
-        let selects = [];
+
         if (elements.length) {
             [].forEach.call(elements, element => {
                 if (element.tagName == "SELECT") {
@@ -18,6 +26,7 @@ const load = {
                         ">. Only <select> elements can be converted to an optionbox"
                     );
             });
+
             this.create(selects);
             update.listen(document.querySelectorAll(".optionbox-radio"));
             this.clickAllSelected();

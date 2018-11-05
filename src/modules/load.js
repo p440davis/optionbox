@@ -3,17 +3,11 @@ import { persist } from "./persist.js";
 
 const load = {
     init(settings) {
-        let selector;
-        let elements;
-        let selects = [];
-
-        if (settings) {
-            selector = settings.select;
-        }
-
-        elements = selector
+        let selector = settings ? settings.selector : undefined;
+        let elements = selector
             ? document.querySelectorAll(selector)
             : document.querySelectorAll("select");
+        let selects = [];
 
         if (elements.length) {
             [].forEach.call(elements, element => {

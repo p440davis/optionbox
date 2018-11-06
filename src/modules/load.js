@@ -1,11 +1,8 @@
 import { update } from "./update.js";
 import { persist } from "./persist.js";
-import { setup } from "./setup.js";
 
 const load = {
     init(settings) {
-        settings = setup(settings);
-
         let elements = settings.select
             ? document.querySelectorAll(settings.select)
             : document.querySelectorAll("select");

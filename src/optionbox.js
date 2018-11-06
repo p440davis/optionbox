@@ -1,5 +1,5 @@
-import { load } from "./modules/load.js";
-import { setup } from "./modules/setup.js";
+import { load } from "./core/load.js";
+import { setup } from "./core/setup.js";
 
 window.optionbox = (userSettings) => {
     let settings = setup(userSettings);

@@ -10,12 +10,12 @@
   <title>optionbox.js</title>
 </head>
 
-<body class="sans size col pad light">
-  <header class="pad">
-    <h1 class="normal">Optionbox.js transforms your
-      <pre class="inline">&lt;select&gt;</pre> drowdowns into intuitive, accessible optionboxes that obey your styles</h1>
+<body class="sans size col gradient">
+  <header class="pad space light round">
+    <h1 class="normal"><strong>Optionbox.js</strong> transforms your
+      <span class="code">&lt;select&gt;</span> drowdowns into intuitive, accessible optionboxes that obey your styles</h1>
   </header>
-  <section class="pad">
+  <section class="pad space light round">
     <h2>This is an optionbox</h2>
     <label for="style">Choose a style</label>
     <select name="style" id="style">
@@ -39,7 +39,7 @@
       </li>
     </ul>
   </section>
-  <section class="pad">
+  <section class="pad space light round">
     <h2>Optionbox.js is...</h2>
     <ul>
       <li>tiny (less than 2KB)</li>
@@ -49,9 +49,53 @@
       <li>free and open source</li>
     </ul>
   </section>
+  <section class="pad space light round">
+    <h2>Getting started</h2>
+    <p>Pop this at the bottom of your HTML, before the closing
+      <span class="code">&lt;body&gt;</span> tag and all your <span class="code">&lt;select&gt;</span> dropdowns will
+      be magically transformed.</p>
+    <p class="code dark pad round">&lt;script src="optionbox.0.1.0.min.js"&gt;&lt;/script&gt;</div>
+      <br><br>&lt;script&gt;
+      <br>&nbsp; optionbox();
+      <br>&lt;/script&gt;
+    </p>
+  </section>
+  <section class="pad space light round">
+    <h2>Settings</h2>
 
-  <script src="../dist/optionbox.min.js"></script>
+    <h3 class="code">select:</h3>
+    <p>By default, all select elements on the page will be transformed into optionboxes.</p>
+    <p>If you only want to transform some of your dropdowns, like
+      <br><span class="code dark round">
+        &nbsp;&lt;select class="my-class"&gt;
+      </span>
+      , or
+      <span class="code dark round">
+        &nbsp;&lt;select id="my-id"&gt;&nbsp;
+      </span>
+      you can pass in a css-style selector, like so:</p>
+    <p class="code pad dark round">optionbox({
+      <br>&nbsp; select: ".my-class, #my-id"
+      <br>});
+    </p>
+
+    <h3 class="code">persist:</h3>
+    <p>By default, options selected by the user are persisted during the browser session so that they can go back,
+      forward and refresh the page without losing their selection.</p>
+    <p>If you do not want values to be stored in the user's browser
+      sessionStorage you can disable this feature like so:</p>
+    <p class="code pad dark round">optionbox({
+      <br>&nbsp; persist: false
+      <br>});
+    </p>
+  </section>
+
   <script src="index.js"></script>
+
+  <script src="../dist/optionbox.0.1.0.min.js"></script>
+  <script>
+    optionbox();
+  </script>
 </body>
 
 </html>

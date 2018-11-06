@@ -1,11 +1,13 @@
 import { update } from "./update.js";
 import { persist } from "./persist.js";
+import { setup } from "./setup.js";
 
 const load = {
     init(settings) {
-        let selector = settings ? settings.selector : undefined;
-        let elements = selector
-            ? document.querySelectorAll(selector)
+        settings = setup(settings);
+
+        let elements = settings.select
+            ? document.querySelectorAll(settings.select)
             : document.querySelectorAll("select");
         let selects = [];
 
@@ -22,7 +24,7 @@ const load = {
             });
 
             this.create(selects);
-            update.listen(document.querySelectorAll(".optionbox-radio"));
+            update.listen(document.querySelectorAll(".optionbox-radio"), settings.persist);
             this.clickAllSelected();
         }
     },

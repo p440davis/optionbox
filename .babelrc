@@ -7,18 +7,12 @@
       }
     ]
   ],
-  "plugins": [
-    "external-helpers"
-  ],
   "env": {
     "test": {
       "presets": [
         [
           "env"
         ]
-      ],
-      "plugins": [
-        "external-helpers"
       ]
     }
   }

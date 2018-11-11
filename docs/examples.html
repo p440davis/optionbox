@@ -18,31 +18,79 @@
     </header>
 
     <section class="pad space light round">
-        <h2>Standard</h2>
+        <h2 class="code">&lt;select&gt;</h2>
         <p class="pad code dark round">&lt;select name="example1"&gt;
-            <br />&nbsp; &lt;option value="a"&gt;A&lt;/option&gt;
-            <br />&nbsp; &lt;option value="b"&gt;B&lt;/option&gt;
-            <br />&nbsp; &lt;option value="c"&gt;C&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
         <select name="example1">
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
         </select>
     </section>
+
     <section class="pad space light round">
-        <h2>Selected</h2>
+        <h2 class="code">&lt;option selected&gt;</h2>
         <p class="pad code dark round">&lt;select name="example2"&gt;
-            <br />&nbsp; &lt;option value="a"&gt;A&lt;/option&gt;
-            <br />&nbsp; &lt;option value="b" selected&gt;B&lt;/option&gt;
-            <br />&nbsp; &lt;option value="c"&gt;C&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
         <select name="example2">
-            <option value="a">A</option>
-            <option value="b" selected>B</option>
-            <option value="c">C</option>
+            <option>A</option>
+            <option selected>B</option>
+            <option>C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;select multiple&gt;</h2>
+        <p class="pad code dark round">&lt;select name="example2" multiple&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2" multiple>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+
+        <h2 class="code">&lt;select multiple&gt;&lt;option selected&gt;</h2>
+        <p class="pad code dark round">&lt;select name="example2" multiple&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2" multiple>
+            <option>A</option>
+            <option selected>B</option>
+            <option selected>C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;optgroup&gt;</h2>
+        <p class="pad code dark round">&lt;select name="example2"&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2" multiple>
+            <optgroup label="Animal">
+                <option>A</option>
+                <option>B</option>
+            </optgroup>
+            <optgroup label="Vegetable">
+                <option>C</option>
+            </optgroup>
         </select>
     </section>
 

@@ -12,25 +12,34 @@
 
 <body class="sans size col gradient">
     <header class="pad space light round">
-        <h1 class="normal"><strong>Optionbox.js</strong> is a all-purpose
+        <h1 class="normal">
+            <strong>Optionbox.js</strong> is a all-purpose
             <span class="code">&lt;select&gt;</span> replacer, with bells on</h1>
     </header>
 
     <section class="pad space light round">
-        <h2>Standard select</h2>
+        <h2>Standard</h2>
+        <p class="pad code dark round">&lt;select name="example1"&gt;
+            <br />&nbsp; &lt;option value="a"&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option value="b"&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option value="c"&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
         <select name="example1">
             <option value="a">A</option>
             <option value="b">B</option>
             <option value="c">C</option>
         </select>
-        <p>becomes...</p>
-        <select name="example1a" class="opt">
-            <option value="a">A</option>
-            <option value="b">B</option>
-            <option value="c">C</option>
-        </select>
+    </section>
+    <section class="pad space light round">
         <h2>Selected</h2>
-        <select name="example2" class="opt">
+        <p class="pad code dark round">&lt;select name="example2"&gt;
+            <br />&nbsp; &lt;option value="a"&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option value="b" selected&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option value="c"&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2">
             <option value="a">A</option>
             <option value="b" selected>B</option>
             <option value="c">C</option>
@@ -39,9 +48,7 @@
 
     <script src="../dist/optionbox.0.1.0.min.js"></script>
     <script>
-        optionbox({
-            select: ".opt"
-        });
+        optionbox();
     </script>
 </body>
 

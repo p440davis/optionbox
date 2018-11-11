@@ -2,85 +2,86 @@ import { update } from "./update.js";
 import { persist } from "./persist.js";
 
 const load = {
-    init(settings) {
-        let elements = settings.select
-            ? document.querySelectorAll(settings.select)
-            : document.querySelectorAll("select");
-        let selects = [];
+  init(settings) {
+    let elements = settings.select
+      ? document.querySelectorAll(settings.select)
+      : document.querySelectorAll("select");
+    let selects = [];
 
-        if (elements.length) {
-            [].forEach.call(elements, element => {
-                if (element.tagName == "SELECT") {
-                    selects.push(element);
-                } else
-                    console.warn(
-                        "Optionbox warning: Your selection includes a <" +
-                        element.tagName.toLowerCase() +
-                        ">. Only <select> elements can be converted to an optionbox"
-                    );
-            });
+    if (elements.length) {
+      [].forEach.call(elements, element => {
+        if (element.tagName == "SELECT") {
+          selects.push(element);
+        } else
+          console.warn(
+            "Optionbox warning: Your selection includes a <" +
+              element.tagName.toLowerCase() +
+              ">. Only <select> elements can be converted to an optionbox"
+          );
+      });
 
-            this.create(selects);
-            update.listen(document.querySelectorAll(".optionbox-radio"), settings.persist);
-            this.clickAllSelected();
-        }
-    },
+      this.create(selects);
+      update.listen(
+        document.querySelectorAll("._optionbox-radio"),
+        settings.persist
+      );
+      this.clickAllSelected();
+    }
+  },
 
-    create(selects) {
-        selects.forEach(select => {
-            let optionsBox = document.createElement("span");
-            let storedValue = persist.get(select.name);
+  create(selects) {
+    selects.forEach(select => {
+      let optionsBox = document.createElement("span");
+      let storedValue = persist.get(select.name);
 
-            optionsBox.classList.add("optionbox");
-            optionsBox.innerHTML = this.replicate(
-                select.querySelectorAll("option"),
-                select.name,
-                storedValue
-            );
+      optionsBox.classList.add("_optionbox");
+      optionsBox.innerHTML = this.replicate(
+        select.querySelectorAll("option"),
+        select.name,
+        storedValue
+      );
 
-            select.insertAdjacentElement("beforebegin", optionsBox);
+      select.insertAdjacentElement("beforebegin", optionsBox);
 
-            select.selectedIndex = -1;
-            select.hidden = true;
-        });
-    },
+      select.selectedIndex = -1;
+      select.hidden = true;
+    });
+  },
 
-    replicate(options, name, storedValue) {
-        let content = "";
+  replicate(options, name, storedValue) {
+    let content = "";
 
-        [].forEach.call(options, option => {
-            let selected = false;
-            if (storedValue === option.value) {
-                selected = true;
-            } else if (!storedValue && option.hasAttribute("selected")) {
-                selected = true;
-            }
+    [].forEach.call(options, option => {
+      let selected = false;
+      if (storedValue === option.value) {
+        selected = true;
+      } else if (!storedValue && option.hasAttribute("selected")) {
+        selected = true;
+      }
 
-            content += `
-                <label class="optionbox-item">
+      content += `
+                <label class="_optionbox-item">
                 <input
                     type="radio"
-                    class="optionbox-radio"
+                    class="_optionbox-radio"
                     name="${name}-options"
                     data-optionbox-name="${name}"
                     data-optionbox-value="${option.value}"
                     checked="${selected}">
                 ${option.innerHTML}
                 </label>`;
-        });
+    });
 
-        return content;
-    },
+    return content;
+  },
 
-    clickAllSelected() {
-        let checked = document.querySelectorAll(
-            ".optionbox-radio[checked=true]"
-        );
+  clickAllSelected() {
+    let checked = document.querySelectorAll("._optionbox-radio[checked=true]");
 
-        [].forEach.call(checked, radio => {
-            radio.click();
-        });
-    }
+    [].forEach.call(checked, radio => {
+      radio.click();
+    });
+  }
 };
 
 export { load };

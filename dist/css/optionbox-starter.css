@@ -1,4 +1,4 @@
-.optionbox {
+._optionbox {
   display: inline-block;
   vertical-align: top;
   /* margins correct vertical alignment for item padding and border */
@@ -9,28 +9,28 @@
   border: solid 1px gray;
 }
 
-.optionbox-radio {
+._optionbox-radio {
   display: none;
 }
 
-.optionbox-item {
+._optionbox-item {
   display: block;
   position: relative;
   padding: 0.25em 0.5em 0.25em 2em;
   text-align: left;
 }
 
-.optionbox-item.selected {
+._optionbox-item.selected {
   display: inline-block;
   padding: 0.25em 2em 0.25em 0.5em;
 }
 
-.optionbox.closed .optionbox-item:not(.selected) {
+._optionbox.closed ._optionbox-item:not(.selected) {
   display: none;
 }
 
 /* CIRCULAR BUTTON ICON */
-.optionbox-item:not(.selected)::before {
+._optionbox-item:not(.selected)::before {
   content: "";
   position: absolute;
   top: 0.4em;
@@ -43,7 +43,7 @@
 }
 
 /* DOWN ARROW ICON */
-.optionbox-item.selected::after {
+._optionbox-item.selected::after {
   content: "";
   position: absolute;
   top: 0.6em;

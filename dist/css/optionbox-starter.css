@@ -13,6 +13,10 @@
   display: none;
 }
 
+._optionbox-alt:not([hidden]) {
+  display: block;
+}
+
 ._optionbox-item {
   display: block;
   position: relative;
@@ -33,12 +37,12 @@
 ._optionbox-item:not(.selected)::before {
   content: "";
   position: absolute;
-  top: 0.4em;
+  top: 0.5em;
   left: 0.6em;
-  width: 0.6em;
-  height: 0.6em;
+  width: 0.5em;
+  height: 0.5em;
   border: 1.2px solid gray;
-  border-radius: 0.6em;
+  border-radius: 0.5em;
   background-color: gainsboro;
 }
 

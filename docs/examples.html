@@ -33,14 +33,29 @@
     </section>
 
     <section class="pad space light round">
-        <h2 class="code">&lt;option selected&gt;</h2>
+        <h2 class="code">&lt;select alt="description"&gt;</h2>
         <p class="pad code dark round">&lt;select name="example2"&gt;
+            <br />&nbsp; &lt;option alt="description of A"&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option alt="description of B"&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option alt="description of C"&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2">
+            <option alt="description of A">A</option>
+            <option alt="description of B">B</option>
+            <option alt="description of C">C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;option selected&gt;</h2>
+        <p class="pad code dark round">&lt;select name="example3"&gt;
             <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
             <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
             <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
-        <select name="example2">
+        <select name="example3">
             <option>A</option>
             <option selected>B</option>
             <option>C</option>
@@ -49,26 +64,26 @@
 
     <section class="pad space light round">
         <h2 class="code">&lt;select multiple&gt;</h2>
-        <p class="pad code dark round">&lt;select name="example2" multiple&gt;
+        <p class="pad code dark round">&lt;select name="example4" multiple&gt;
             <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
             <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
             <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
-        <select name="example2" multiple>
+        <select name="example4" multiple>
             <option>A</option>
             <option>B</option>
             <option>C</option>
         </select>
 
         <h2 class="code">&lt;select multiple&gt;&lt;option selected&gt;</h2>
-        <p class="pad code dark round">&lt;select name="example2" multiple&gt;
+        <p class="pad code dark round">&lt;select name="example5" multiple&gt;
             <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
             <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
             <br />&nbsp; &lt;option selected&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
-        <select name="example2" multiple>
+        <select name="example5" multiple>
             <option>A</option>
             <option selected>B</option>
             <option selected>C</option>
@@ -77,13 +92,13 @@
 
     <section class="pad space light round">
         <h2 class="code">&lt;optgroup&gt;</h2>
-        <p class="pad code dark round">&lt;select name="example2"&gt;
+        <p class="pad code dark round">&lt;select name="example6"&gt;
             <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
             <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
             <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
             <br />&lt;/select&gt;
         </p>
-        <select name="example2" multiple>
+        <select name="example6" multiple>
             <optgroup label="Animal">
                 <option>A</option>
                 <option>B</option>

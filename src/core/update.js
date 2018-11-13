@@ -1,15 +1,15 @@
 import { persist } from "./persist.js";
 
 const update = {
-  listen(radios, persistable) {
+  listen(radios, persist) {
     [].forEach.call(radios, radio => {
       radio.onclick = () => {
-        this.change(radio, persistable);
+        this.change(radio, persist);
       };
     });
   },
 
-  change(radio, persistable) {
+  change(radio, persist) {
     let name = radio.dataset.optionboxName;
     let value = radio.dataset.optionboxValue;
     let optionItem = radio.closest("._optionbox-item");
@@ -24,7 +24,7 @@ const update = {
       // select if not previously selected
       select.value = value;
       radio.checked = true;
-      if (persistable) {
+      if (persist) {
         persist.store(select.name, select.value);
       }
       this.close(optionItem, optionBox, optionSiblings);

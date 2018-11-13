@@ -6,6 +6,7 @@ const create = {
             let optionbox = document.createElement("span");
             let name = select.name;
             let storedValue = "";
+            let optionElements = select.querySelectorAll("option");
 
             if (storedValues) {
                 storedValue = storedValues[name];
@@ -13,8 +14,10 @@ const create = {
 
             optionbox.id = name + prefix;
             optionbox.classList.add(prefix);
-            optionbox.innerHTML = this.options(select.querySelectorAll("option"), name, storedValue, prefix);
+            optionbox.innerHTML = this.options(optionElements, name, storedValue, prefix);
+
             select.insertAdjacentElement("beforebegin", optionbox);
+
             select.selectedIndex = -1;
             select.hidden = true;
 

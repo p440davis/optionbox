@@ -11,6 +11,11 @@
     margin: auto;
 }
 
+.nowrap {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
 .pad {
     padding: 1em 2.5em;
 }

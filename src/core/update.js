@@ -1,6 +1,15 @@
-import { persist } from "./persist.js";
-
 const update = {
+  trigger(optionboxes) {
+    optionboxes.forEach(optionbox => {
+      // Delegated event listener avoids performance issues of listeneing to every option
+      optionbox.addEventListener("click", e => {
+        if (e.target && e.target.tagName === "INPUT") {
+          console.log(e.target);
+        }
+      });
+    });
+  },
+
   listen(radios, persist) {
     [].forEach.call(radios, radio => {
       radio.onclick = () => {

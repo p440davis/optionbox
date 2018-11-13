@@ -1,5 +1,6 @@
 import { get } from "./core/get.js";
 import { create } from "./core/create.js";
+import { update } from "./core/update.js";
 
 window.optionbox = (userConfig) => {
     // Get
@@ -10,6 +11,6 @@ window.optionbox = (userConfig) => {
     let selectElements = get.selectElements(config.select);
     // Create
     let optionboxes = create.optionboxes(selectElements, storedValues, prefix);
-    console.log(`boxes: ${optionboxes}`);
     // Updates
+    update.trigger(optionboxes);
 };

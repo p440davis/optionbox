@@ -1,60 +1,65 @@
 ._optionbox {
-  display: inline-block;
-  vertical-align: top;
-  /* margins correct vertical alignment for item padding and border */
-  margin-top: calc(-0.25em - 1px);
-  margin-bottom: calc(0.25em + 1px);
-  color: black;
-  background-color: white;
-  border: solid 1px gray;
+    display: inline-block;
+    vertical-align: top;
+    /* margins correct vertical alignment for item padding and border */
+    margin-top: calc(-0.25em - 1px);
+    margin-bottom: calc(0.25em + 1px);
+    color: black;
+    background-color: white;
+    border: solid 1px gray;
+    overflow: hidden;
 }
 
 ._optionbox-radio {
-  display: none;
+    display: none;
 }
 
 ._optionbox-alt:not([hidden]) {
-  display: block;
+    display: block;
+}
+
+._optionbox.closed ._optionbox-alt {
+    display: none;
 }
 
 ._optionbox-item {
-  display: block;
-  position: relative;
-  padding: 0.25em 0.5em 0.25em 2em;
-  text-align: left;
+    display: block;
+    position: relative;
+    padding: 0.25em 0.5em 0.25em 2em;
+    text-align: left;
 }
 
 ._optionbox-item.selected {
-  display: inline-block;
-  padding: 0.25em 2em 0.25em 0.5em;
+    display: inline-block;
+    padding: 0.25em 2em 0.25em 0.5em;
 }
 
 ._optionbox.closed ._optionbox-item:not(.selected) {
-  display: none;
+    display: none;
 }
 
 /* CIRCULAR BUTTON ICON */
 ._optionbox-item:not(.selected)::before {
-  content: "";
-  position: absolute;
-  top: 0.5em;
-  left: 0.6em;
-  width: 0.5em;
-  height: 0.5em;
-  border: 1.2px solid gray;
-  border-radius: 0.5em;
-  background-color: gainsboro;
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    left: 0.6em;
+    width: 0.5em;
+    height: 0.5em;
+    border: 1.2px solid gray;
+    border-radius: 0.5em;
+    background-color: gainsboro;
 }
 
 /* DOWN ARROW ICON */
 ._optionbox-item.selected::after {
-  content: "";
-  position: absolute;
-  top: 0.6em;
-  right: 0.3em;
-  width: 0;
-  height: 0;
-  border-left: 0.3em solid transparent;
-  border-right: 0.3em solid transparent;
-  border-top: 0.5em solid gray;
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    right: 0.3em;
+    width: 0;
+    height: 0;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.5em solid gray;
 }

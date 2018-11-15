@@ -1,9 +1,6 @@
-import { get } from "../../src/core/get"
+import { get } from "../../src/_get"
 
-const defaults = {
-    persist: true,
-    select: "select"
-}
+const defaults = get.defaultConfig;
 
 const userSet = {
     persist: false,
@@ -27,13 +24,13 @@ test("User sets defaults, return defaults", () => {
 })
 
 test("User sets select, return user setting and defaults", () => {
-    expect(get.config({ select: userSet.select })).toEqual({ select: userSet.select, persist: true });
+    expect(get.config({ select: userSet.select })).toEqual({ ...defaults, select: userSet.select, persist: true });
 })
 
 test("User sets persist, return user setting and defaults", () => {
-    expect(get.config({ persist: userSet.persist })).toEqual({ select: "select", persist: userSet.persist });
+    expect(get.config({ persist: userSet.persist })).toEqual({ ...defaults, persist: userSet.persist });
 })
 
 test("User settings in any order, return user settings", () => {
-    expect(get.config(userSet)).toEqual(userSet);
+    expect(get.config(userSet)).toEqual({ ...defaults, ...userSet });
 })

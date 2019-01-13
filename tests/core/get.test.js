@@ -24,7 +24,7 @@ test("User sets defaults, return defaults", () => {
 })
 
 test("User sets select, return user setting and defaults", () => {
-    expect(get.config({ select: userSet.select })).toEqual({ ...defaults, select: userSet.select, persist: true });
+    expect(get.config({ select: userSet.select })).toEqual({ ...defaults, select: userSet.select, persist: "/" });
 })
 
 test("User sets persist, return user setting and defaults", () => {

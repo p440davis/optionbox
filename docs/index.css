@@ -61,6 +61,10 @@ a.dark {
     }
 }
 
-.line-h-0 {
+.ln-h-0 {
     line-height: 0;
+}
+
+.ln-h-lg {
+    line-height: 1.9;
 }

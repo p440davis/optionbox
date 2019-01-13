@@ -44,10 +44,12 @@ const create = {
             content += `
                     <label 
                         class="${prefix}-item ${classes != null ? classes : ""}"
-                        style="${styles != null ? styles : ""}">
+                        style="${styles != null ? styles : ""}"
+                        for="${name + " - " + option.value}">
                     <input
                         type="radio"
                         class="${prefix}-radio"
+                        id="${name + " - " + option.value}"
                         name="${name + prefix}"
                         value="${option.value}"
                         checked="${selected}">

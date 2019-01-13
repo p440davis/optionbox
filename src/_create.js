@@ -16,9 +16,9 @@ const create = {
             }
 
             optionbox.id = name + prefix;
-            optionbox.setAttribute("class", classes);
+            classes != null && optionbox.setAttribute("class", classes);
             optionbox.classList.add(prefix);
-            optionbox.setAttribute("style", styles);
+            styles != null && optionbox.setAttribute("style", styles);
             optionbox.innerHTML = this.options(optionElements, name, storedValue, prefix);
 
             select.insertAdjacentElement("beforebegin", optionbox);
@@ -40,13 +40,11 @@ const create = {
             let alt = option.getAttribute("alt");
             let classes = option.getAttribute("class");
             let styles = option.getAttribute("style");
-            console.log(classes);
-            console.log(styles);
 
             content += `
                     <label 
-                        class="${prefix}-item ${classes}"
-                        style="${styles}">
+                        class="${prefix}-item ${classes != null ? classes : ""}"
+                        style="${styles != null ? styles : ""}">
                     <input
                         type="radio"
                         class="${prefix}-radio"

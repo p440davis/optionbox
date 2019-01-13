@@ -2,8 +2,8 @@
     display: inline-block;
     vertical-align: top;
     /* margins correct vertical alignment for item padding and border */
-    margin-top: calc(-0.25em - 1px);
-    margin-bottom: calc(0.25em + 1px);
+    /* margin-top: calc(-0.25em - 1px);
+    margin-bottom: calc(0.25em + 1px); */
     color: black;
     background-color: white;
     border: solid 1px gray;

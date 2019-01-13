@@ -1,7 +1,7 @@
 const get = {
     defaultConfig: {
         persist: window.location.pathname,
-        prefix: "_optionbox",
+        prefix: "optionbox-",
         select: "select"
     },
 

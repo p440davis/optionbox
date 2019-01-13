@@ -14,7 +14,7 @@ const update = {
         let optionbox = radio.closest("." + prefix);
         let name = optionbox.id.replace(prefix, "");
         let value = radio.value;
-        let optionItem = radio.closest("." + prefix + "-item");
+        let optionItem = radio.closest("label");
         let optionSiblings = optionbox.querySelectorAll(
             "._optionbox-radio:not(:checked)"
         );

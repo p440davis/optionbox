@@ -15,7 +15,7 @@ const create = {
                 storedValue = sessionStorage[config.persist + ">" + select.name];
             }
 
-            optionbox.id = name + prefix;
+            optionbox.id = prefix + name;
             classes != null && optionbox.setAttribute("class", classes);
             optionbox.classList.add(prefix);
             styles != null && optionbox.setAttribute("style", styles);
@@ -33,7 +33,7 @@ const create = {
     },
 
     options(optionElements, name, storedValue, prefix) {
-        let content = "";
+        let content = `<div class=${prefix}container>`;
 
         [].forEach.call(optionElements, option => {
             let selected = this.preselected(storedValue, option);
@@ -43,24 +43,26 @@ const create = {
 
             content += `
                     <label 
-                        class="${prefix}-item ${classes != null ? classes : ""}"
+                        class="${prefix}item ${classes != null ? classes : ""}"
                         style="${styles != null ? styles : ""}"
-                        for="${name + " - " + option.value}">
+                        for="${prefix}${name}-${option.value}">
                     <input
                         type="radio"
-                        class="${prefix}-radio"
-                        id="${name + " - " + option.value}"
-                        name="${name + prefix}"
+                        class="${prefix}radio"
+                        id="${prefix}${name}-${option.value}"
+                        name="${prefix}${name}"
                         value="${option.value}"
                         checked="${selected}">
                         ${option.innerHTML}`;
 
             if (alt) {
-                content += `<small class="${prefix}-alt">${alt}</small>`;
+                content += `<small class="${prefix}alt">${alt}</small>`;
             }
 
             content += "</label>";
         });
+
+        content += "</div>";
 
         return content;
     },

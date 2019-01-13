@@ -1,4 +1,4 @@
-._optionbox {
+.optionbox- {
     display: inline-block;
     vertical-align: top;
     color: black;
@@ -7,8 +7,26 @@
     overflow: hidden;
 }
 
-._optionbox-radio {
-    /* Hide radio, but keep it screen reader accessible */
+.optionbox-item {
+    display: block;
+    position: relative;
+    padding: 0.3em 0.5em 0.3em 2em;
+    text-align: left;
+}
+
+.optionbox-item.selected {
+    display: inline-block;
+    padding: 0.3em 2em 0.3em 0.5em;
+}
+
+.optionbox-alt {
+    display: block;
+}
+
+.optionbox-radio,
+.optionbox-.closed .optionbox-item:not(.selected),
+.optionbox-.closed .optionbox-alt {
+    /* hide visually but keep screen reader accessible */
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -18,32 +36,8 @@
     position: absolute;
 }
 
-._optionbox-alt:not([hidden]) {
-    display: block;
-}
-
-._optionbox.closed ._optionbox-alt {
-    display: none;
-}
-
-._optionbox-item {
-    display: block;
-    position: relative;
-    padding: 0.3em 0.5em 0.3em 2em;
-    text-align: left;
-}
-
-._optionbox-item.selected {
-    display: inline-block;
-    padding: 0.3em 2em 0.3em 0.5em;
-}
-
-._optionbox.closed ._optionbox-item:not(.selected) {
-    display: none;
-}
-
 /* CIRCULAR BUTTON ICON */
-._optionbox-item:not(.selected)::before {
+.optionbox-item:not(.selected)::before {
     content: "";
     position: absolute;
     top: 0.5em;
@@ -55,13 +49,13 @@
     background-color: gainsboro;
 }
 
-._optionbox-item:not(.selected):hover::before {
+.optionbox-item:not(.selected):hover::before {
     background-color: skyblue;
     border-color: blue;
 }
 
 /* DOWN ARROW ICON */
-._optionbox-item.selected::after {
+.optionbox-item.selected::after {
     content: "";
     position: absolute;
     top: 0.7em;
@@ -73,6 +67,6 @@
     border-top: 0.5em solid gray;
 }
 
-._optionbox-item.selected:hover::after {
+.optionbox-item.selected:hover::after {
     border-top-color: blue;
 }

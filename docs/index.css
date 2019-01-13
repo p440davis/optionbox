@@ -7,7 +7,7 @@
 }
 
 .col {
-    max-width: 44rem;
+    max-width: 48rem;
     margin: auto;
 }
 
@@ -59,4 +59,8 @@ a.dark {
     body {
         font-size: 20px;
     }
+}
+
+.line-h-0 {
+    line-height: 0;
 }

@@ -1,5 +1,5 @@
 const create = {
-    optionboxes(config, storedValues, selectElements) {
+    optionboxes(config, selectElements) {
         let optionboxElements = [];
 
         selectElements.forEach(select => {
@@ -11,8 +11,8 @@ const create = {
             let optionElements = select.querySelectorAll("option");
             let optionbox = document.createElement("span");
 
-            if (storedValues) {
-                storedValue = storedValues[name];
+            if (config.persist) {
+                storedValue = sessionStorage[config.persist + ">" + select.name];
             }
 
             optionbox.id = name + prefix;

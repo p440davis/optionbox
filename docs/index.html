@@ -17,8 +17,8 @@
   </header>
   <section class="pad space light round">
     <h2>This is an optionbox</h2>
-    <label for="style">Reasons to &#10084; optionbox</label>
-    <select name="style" id="style">
+    <label for="style">Reasons to <span class="line-h-0">&#10084;</span> optionbox</label>
+    <select name="reasons to be cheerful">
       <option>Open when no option is selected</option>
       <option style="font-style:italic">Style it your way</option>
       <option>Tiny, universal and easy to setup</option>
@@ -96,7 +96,9 @@
 
   <script src="../dist/optionbox.0.1.0.min.js"></script>
   <script>
-    optionbox();
+    optionbox({
+      persist: "site"
+    });
   </script>
 </body>
 

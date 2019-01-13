@@ -19,17 +19,18 @@ const update = {
             "._optionbox-radio:not(:checked)"
         );
 
-        let select = document.querySelector(`[name=${name}]`);
+        let select = document.querySelector(`[name="${name}"]`);
+        let key = config.persist + ">" + select.name;
 
         if (select.value != value) { // select if not previously selected
             select.value = value;
             radio.checked = true;
-            this.store(config, select);
+            this.store(config, select, key);
             this.close(optionItem, optionbox, optionSiblings);
         } else { // deselect if previously selected
             select.selectedIndex = -1;
             radio.checked = false;
-            this.remove(config, select);
+            this.remove(config, key);
             this.open(optionItem, optionbox);
         }
     },
@@ -57,15 +58,15 @@ const update = {
         });
     },
 
-    store(config, select) {
+    store(config, select, key) {
         if (config.persist) {
-            sessionStorage.setItem(config.prefix + "-" + select.name, select.value);
+            sessionStorage[key] = select.value;
         }
     },
 
-    remove(config, select) {
+    remove(config, key) {
         if (config.persist) {
-            sessionStorage.removeItem(config.prefix + "-" + select.name);
+            delete sessionStorage[key];
         }
     }
 };

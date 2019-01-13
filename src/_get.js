@@ -1,18 +1,18 @@
 const get = {
     defaultConfig: {
-        persist: true,
+        persist: window.location.pathname,
         prefix: "_optionbox",
         select: "select"
     },
 
     config(userConfig) {
-        let mergedConfig = Object.assign(this.defaultConfig, userConfig);
+        let config = Object.assign(this.defaultConfig, userConfig);
 
-        if (mergedConfig.persist) {
-            mergedConfig.persist = this.storageExists();
+        if (!this.storageExists()) {
+            config.persist = false;
         }
 
-        return mergedConfig;
+        return config;
     },
 
     storageExists() {
@@ -21,14 +21,6 @@ const get = {
         }
 
         return false;
-    },
-
-    storedValues(config) {
-        if (config.persist) {
-            return sessionStorage.getItem(config.prefix);
-        }
-
-        return {};
     },
 
     selectElements(selector) {

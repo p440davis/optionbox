@@ -1,56 +1,72 @@
-.optionbox {
-  display: inline-block;
-  vertical-align: top;
-  /* margins correct vertical alignment for item padding and border */
-  margin-top: calc(-0.25em - 1px);
-  margin-bottom: calc(0.25em + 1px);
-  color: black;
-  background-color: white;
-  border: solid 1px gray;
-}
-
-.optionbox-radio {
-  display: none;
+.optionbox- {
+    display: inline-block;
+    vertical-align: top;
+    color: black;
+    background-color: white;
+    border: solid 1px gray;
+    overflow: hidden;
 }
 
 .optionbox-item {
-  display: block;
-  position: relative;
-  padding: 0.25em 0.5em 0.25em 2em;
-  text-align: left;
+    display: block;
+    position: relative;
+    padding: 0.3em 0.5em 0.3em 2em;
+    text-align: left;
 }
 
 .optionbox-item.selected {
-  display: inline-block;
-  padding: 0.25em 2em 0.25em 0.5em;
+    padding-left: 0.5em;
+    padding-right: 2em;
 }
 
-.optionbox.closed .optionbox-item:not(.selected) {
-  display: none;
+.optionbox-alt {
+    display: block;
+}
+
+.optionbox-radio,
+.optionbox-.closed .optionbox-item:not(.selected),
+.optionbox-.closed .optionbox-alt {
+    /* hide visually but keep screen reader accessible */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
 }
 
 /* CIRCULAR BUTTON ICON */
 .optionbox-item:not(.selected)::before {
-  content: "";
-  position: absolute;
-  top: 0.4em;
-  left: 0.6em;
-  width: 0.6em;
-  height: 0.6em;
-  border: 1.2px solid gray;
-  border-radius: 0.6em;
-  background-color: gainsboro;
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    left: 0.6em;
+    width: 0.6em;
+    height: 0.6em;
+    border: 1.2px solid gray;
+    border-radius: 0.5em;
+    background-color: gainsboro;
+}
+
+.optionbox-item:not(.selected):hover::before {
+    background-color: skyblue;
+    border-color: blue;
 }
 
 /* DOWN ARROW ICON */
 .optionbox-item.selected::after {
-  content: "";
-  position: absolute;
-  top: 0.6em;
-  right: 0.3em;
-  width: 0;
-  height: 0;
-  border-left: 0.3em solid transparent;
-  border-right: 0.3em solid transparent;
-  border-top: 0.5em solid gray;
+    content: "";
+    position: absolute;
+    top: 0.7em;
+    right: 0.3em;
+    width: 0;
+    height: 0;
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.5em solid gray;
+}
+
+.optionbox-item.selected:hover::after {
+    border-top-color: blue;
 }

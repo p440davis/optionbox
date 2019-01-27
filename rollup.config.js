@@ -3,7 +3,7 @@ import { eslint } from "rollup-plugin-eslint";
 import { uglify } from "rollup-plugin-uglify";
 
 export default {
-  input: "src/main.js",
+  input: "src/optionbox.js",
   plugins: [
     eslint({ exclude: ["dist/**"] }),
     babel({ exclude: "node_modules/**" }),
@@ -12,6 +12,6 @@ export default {
   output: {
     format: "iife",
     sourcemap: true,
-    file: "dist/optionbox.min.js"
+    file: "dist/optionbox.0.1.0.min.js"
   }
 };

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../dist/css/optionbox-starter.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Examples | Optionbox.js</title>
+</head>
+
+<body class="sans size col gradient">
+    <header class="pad space light round">
+        <h1 class="normal">
+            <strong>Optionbox.js</strong> is a all-purpose
+            <span class="code">&lt;select&gt;</span> replacer, with bells on</h1>
+    </header>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;select&gt;</h2>
+        <p class="pad code dark round nowrap">&lt;select name="example1"&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="reasons to be cheerful" class="round" style="background: yellow">
+            <option class="code dark">A</option>
+            <option style="background-color:cyan">Style it your way</option>
+            <option>C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;option alt="description"&gt;</h2>
+        <p>Help people choose by providing option descriptions.</p>
+        <p class="pad code dark round nowrap">&lt;select name="example2"&gt;
+            <br />&nbsp; &lt;option alt="Description of A"&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option alt="Description of B"&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option alt="Description of C"&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example2">
+            <option alt="Brave">Gryffindor</option>
+            <option alt="Kind">Hufflepuff</option>
+            <option alt="Intelligent">Ravenclaw</option>
+            <option alt="Abmitious">Slytherin</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;option selected&gt;</h2>
+        <p class="pad code dark round nowrap">&lt;select name="example3"&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example3">
+            <option>A</option>
+            <option selected>B</option>
+            <option>C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;select multiple&gt;</h2>
+        <p class="pad code dark round nowrap">&lt;select name="example4" multiple&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example4" multiple>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+
+        <h2 class="code">&lt;select multiple&gt;&lt;option selected&gt;</h2>
+        <p class="pad code dark round nowrap">&lt;select name="example5" multiple&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option selected&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example5" multiple>
+            <option>A</option>
+            <option selected>B</option>
+            <option selected>C</option>
+        </select>
+    </section>
+
+    <section class="pad space light round">
+        <h2 class="code">&lt;optgroup&gt;</h2>
+        <p class="pad code dark round nowrap">&lt;select name="example6"&gt;
+            <br />&nbsp; &lt;option&gt;A&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;B&lt;/option&gt;
+            <br />&nbsp; &lt;option&gt;C&lt;/option&gt;
+            <br />&lt;/select&gt;
+        </p>
+        <select name="example6" multiple>
+            <optgroup label="Animal">
+                <option>A</option>
+                <option>B</option>
+            </optgroup>
+            <optgroup label="Vegetable">
+                <option>C</option>
+            </optgroup>
+        </select>
+    </section>
+
+    <script src="../dist/optionbox.0.1.0.min.js"></script>
+    <script>
+        optionbox();
+    </script>
+</body>
+
+</html>

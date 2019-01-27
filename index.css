@@ -6,6 +6,11 @@
     display: block;
 }
 
+.stickup {
+    position: sticky;
+    top: 0;
+}
+
 .cen {
     text-align: center;
 }

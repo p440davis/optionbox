@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../dist/css/optionbox-starter.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Optionbox.js</title>
+</head>
+
+<body class="sans size col gradient">
+  <header class="pad space light round">
+    <h1 class="normal">Optionbox.js</h1>
+    <h2><span class="code">&lt;select&gt;</span> drowdowns that don't suck!</h2>
+  </header>
+
+  <section class="pad space light round stickup">
+    <h2>This is an optionbox</h2>
+    <label for="style" class="ln-h-lg">Reasons to <span class="line-h-0">&#10084;</span> optionbox</label>
+    <select name="reasons to be cheerful">
+      <option>Open when no option is selected</option>
+      <option style="font-style:italic">Style it your way</option>
+      <option>Tiny plugin, effortless to setup</option>
+      <option alt="Option descriptions and more...">Superpowers!</option>
+    </select>
+    <p>You could think of an optionbox as a hybrid of a dropdown and a radio group, whithout the downsides.</p>
+    <ul>
+      <li>
+        <p>Optionboxes can initially be open, enabling quick selection.</p>
+      </li>
+      <li>
+        <p>Optionboxes close up neatly when selected.</p>
+      </li>
+      <li>
+        <p>The styling of options is independent of device and browser. Your CSS is in control.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="pad space light round">
+    <h2 class="code">&lt;select&gt;</h2>
+    <p class="pad code dark round nowrap">&lt;select name="example1"&gt;
+      <br>&nbsp; &lt;option&gt;A&lt;/option&gt;
+      <br>&nbsp; &lt;option&gt;B&lt;/option&gt;
+      <br>&nbsp; &lt;option&gt;C&lt;/option&gt;
+      <br>&lt;/select&gt;
+    </p>
+    <select name="reasons to be cheerful" class="round" style="background: yellow">
+      <option class="code dark">A</option>
+      <option style="background-color:cyan">Style it your way</option>
+      <option>C</option>
+    </select>
+  </section>
+
+  <section class="pad space dark round">
+    <h2>Styles examples</h2>
+    <p>Head over to our <a href="https://codepen.io/collection/AvmYGd/">Codepen gallery</a> to get inspired.</p>
+    <p>If you're feeling creative, fork one of the <a href="https://codepen.io/collection/AvmYGd/">css starters</a>
+      and style optionbox your way.</p>
+  </section>
+
+  <section class="pad space light round">
+    <h2>Optionbox.js is...</h2>
+    <ul>
+      <li>tiny (less than 3KB)</li>
+      <li>compatable with all major browsers (even IE!!!)</li>
+      <li>just javascript (no dependencies, no conflicts)</li>
+      <li>customisable with your own CSS</li>
+      <li>free and open source</li>
+    </ul>
+  </section>
+
+  <section class="pad space light round">
+    <h2>Getting started</h2>
+    <p>Pop this at the bottom of your HTML, before the closing
+      <span class="code">&lt;body&gt;</span> tag and all your <span class="code">&lt;select&gt;</span> dropdowns will
+      be magically transformed.</p>
+    <p class="code dark pad round">&lt;script src="optionbox.0.1.0.min.js"&gt;&lt;/script&gt;</div>
+      <br><br>&lt;script&gt;
+      <br>&nbsp; optionbox();
+      <br>&lt;/script&gt;
+    </p>
+  </section>
+
+  <section class="pad space light round">
+    <h2 class="code">&lt;option alt="description"&gt;</h2>
+
+    <p>Help people choose by providing option descriptions.</p>
+    <p class="pad code dark round nowrap">&lt;select name="example2"&gt;
+      <br>&nbsp; &lt;option alt="Description of A"&gt;A&lt;/option&gt;
+      <br>&nbsp; &lt;option alt="Description of B"&gt;B&lt;/option&gt;
+      <br>&nbsp; &lt;option alt="Description of C"&gt;C&lt;/option&gt;
+      <br>&lt;/select&gt;
+    </p>
+
+    <select name="example2">
+      <option alt="Brave">Gryffindor</option>
+      <option alt="Kind">Hufflepuff</option>
+      <option alt="Intelligent">Ravenclaw</option>
+      <option alt="Abmitious">Slytherin</option>
+    </select>
+  </section>
+
+  <section class="pad space light round">
+    <h2 class="code">&lt;option selected&gt;</h2>
+
+    <p class="pad code dark round nowrap">&lt;select name="example3"&gt;
+      <br>&nbsp; &lt;option&gt;A&lt;/option&gt;
+      <br>&nbsp; &lt;option selected&gt;B&lt;/option&gt;
+      <br>&nbsp; &lt;option&gt;C&lt;/option&gt;
+      <br>&lt;/select&gt;
+    </p>
+
+    <select name="example3">
+      <option>A</option>
+      <option selected>B</option>
+      <option>C</option>
+    </select>
+  </section>
+
+  <section class="pad space light round">
+    <h2 class="code">&lt;optgroup&gt;</h2>
+
+    <p class="pad code dark round nowrap">&lt;select name="example6"&gt;
+      <br>&nbsp; &lt;optgroup&gt;Animal&lt;/optgroup&gt;
+      <br>&nbsp; &lt;option&gt;Aardvark&lt;/option&gt;
+      <br>&nbsp; &lt;option&gt;Beetle&lt;/option&gt;
+      <br>&nbsp; &lt;optgroup&gt;Vegetable&lt;/optgroup&gt;
+      <br>&nbsp; &lt;option&gt;Carrot&lt;/option&gt;
+      <br>&lt;/select&gt;
+    </p>
+
+    <select name="example6">
+      <optgroup label="Animal">
+        <option>Aardvark</option>
+        <option>Beetle</option>
+      </optgroup>
+      <optgroup label="Vegetable">
+        <option>Carrot</option>
+      </optgroup>
+    </select>
+  </section>
+
+  <section class="pad space light round">
+    <h2>Settings</h2>
+    <p>Optionbox comes pre-configured with good general purpose defaults, but but there are some configuration options
+      available to you.</p>
+
+    <h3 class="code">select:</h3>
+    <p>By default, all select elements on the page will be replaced with optionboxes.</p>
+    <p>You can specify which dropdowns to include, like
+      <br><span class="code dark round">
+        &nbsp;&lt;select class="my-class"&gt;
+      </span>
+      &nbsp;or
+      <span class="code dark round">
+        &nbsp;&lt;select id="my-id"&gt;&nbsp;
+      </span>
+      &nbsp;using css-style selectors, like so:
+    </p>
+    <p class="code pad dark round">optionbox({
+      <br>&nbsp; select: ".my-class, #my-id"
+      <br>});
+    </p>
+    <p>You can also use this set exclusions
+      <span class="code dark round">
+        &nbsp;&lt;select class="exclude"&gt;&nbsp;
+      </span>
+    </p>
+    <p class="code pad dark round">optionbox({
+      <br>&nbsp; select: "select:not(.exclude)"
+      <br>});
+    </p>
+
+    <h3 class="code">persist:</h3>
+    <p>By default, options selected by the user are persisted during the browser session so that they can go back,
+      forward and refresh the page without losing their selection.</p>
+    <p>If you do not want values to be stored in the user's browser
+      sessionStorage you can disable this feature like so:</p>
+    <p class="code pad dark round">optionbox({
+      <br>&nbsp; persist: false
+      <br>});
+    </p>
+  </section>
+
+  <script src="../dist/optionbox.0.1.0.min.js"></script>
+  <script>
+    optionbox();
+  </script>
+</body>
+
+</html>

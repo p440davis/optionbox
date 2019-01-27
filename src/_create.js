@@ -24,7 +24,7 @@ const create = {
             select.insertAdjacentElement("beforebegin", optionbox);
 
             select.selectedIndex = -1;
-            select.hidden = true;
+            select.remove();
 
             optionboxElements.push(optionbox);
         });
@@ -44,13 +44,11 @@ const create = {
             content += `
                     <label 
                         class="${prefix}item ${classes != null ? classes : ""}"
-                        style="${styles != null ? styles : ""}"
-                        for="${prefix}${name}-${option.value}">
+                        style="${styles != null ? styles : ""}">
                     <input
                         type="radio"
                         class="${prefix}radio"
-                        id="${prefix}${name}-${option.value}"
-                        name="${prefix}${name}"
+                        name="${name}"
                         value="${option.value}"
                         checked="${selected}">
                         ${option.innerHTML}`;

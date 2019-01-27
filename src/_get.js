@@ -2,7 +2,7 @@ const get = {
     defaultConfig: {
         persist: window.location.pathname,
         prefix: "optionbox-",
-        select: "select"
+        select: "select:not([multiple])"
     },
 
     config(userConfig) {

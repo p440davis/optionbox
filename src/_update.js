@@ -11,31 +11,28 @@ const update = {
 
     change(radio, config) {
         let prefix = config.prefix;
-        let optionbox = radio.closest("." + prefix);
-        let name = optionbox.id.replace(prefix, "");
+        let name = radio.name;
+        let key = config.persist + ">" + name;
         let value = radio.value;
         let optionItem = radio.closest("label");
+        let optionbox = radio.closest("." + prefix);
+
+        if (optionItem.classList.contains("selected")) {
+            radio.checked = false;
+            this.remove(config, key);
+            this.open(optionItem, optionbox);
+        } else {
+            radio.checked = true;
+            this.store(config, key, value);
+            this.close(optionItem, optionbox);
+        }
+    },
+
+    close(optionItem, optionbox) {
         let optionSiblings = optionbox.querySelectorAll(
             "._optionbox-radio:not(:checked)"
         );
 
-        let select = document.querySelector(`[name="${name}"]`);
-        let key = config.persist + ">" + select.name;
-
-        if (select.value != value) { // select if not previously selected
-            select.value = value;
-            radio.checked = true;
-            this.store(config, select, key);
-            this.close(optionItem, optionbox, optionSiblings);
-        } else { // deselect if previously selected
-            select.selectedIndex = -1;
-            radio.checked = false;
-            this.remove(config, key);
-            this.open(optionItem, optionbox);
-        }
-    },
-
-    close(optionItem, optionbox, optionSiblings) {
         optionItem.classList.add("selected");
         optionbox.classList.add("closed");
         [].forEach.call(optionSiblings, sibling =>
@@ -58,9 +55,9 @@ const update = {
         });
     },
 
-    store(config, select, key) {
+    store(config, key, value) {
         if (config.persist) {
-            sessionStorage[key] = select.value;
+            sessionStorage[key] = value;
         }
     },
 

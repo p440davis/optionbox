@@ -55,24 +55,16 @@ $primary: deepskyblue;
     }
 }
 
-.optionbox- {
+.optionbox-group {
     display: inline-block;
     vertical-align: top;
-    color: $dark;
-    background-color: $light;
-    border: solid 1px $mid;
-    overflow: hidden;
+}
 
-    &.closed  {
-        .optionbox-item:not(.selected),
-        .optionbox-alt {
-            max-height: 0;
-            padding-bottom: 0;
-            padding-top: 0;
-            overflow: hidden;
-            opacity: 0;
-        }
-    }
+.optionbox-group-label {
+    display: block;
+    color: $mid;
+    padding: 0.3em 0.8em;
+    transition: all $time;
 }
 
 .optionbox-alt {
@@ -90,4 +82,29 @@ $primary: deepskyblue;
     overflow: hidden;
     padding: 0;
     position: absolute;
+}
+
+.optionbox- {
+    display: inline-block;
+    vertical-align: top;
+    color: $dark;
+    background-color: $light;
+    border: solid 1px $mid;
+    overflow: hidden;
+
+    &.closed  {
+        .optionbox-item:not(.selected),
+        .optionbox-alt,
+        .optionbox-group-label {
+            max-height: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .optionbox-group {
+            display: inline;
+        }
+    }
 }

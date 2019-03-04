@@ -8,6 +8,7 @@ const create = {
             let classes = select.getAttribute("class");
             let styles = select.getAttribute("style");
             let storedValue = "";
+            let optgroupElements = select.querySelectorAll("optgroup");
             let optionElements = select.querySelectorAll("option");
             let optionbox = document.createElement("span");
 
@@ -19,7 +20,16 @@ const create = {
             classes != null && optionbox.setAttribute("class", classes);
             optionbox.classList.add(prefix);
             styles != null && optionbox.setAttribute("style", styles);
-            optionbox.innerHTML = this.options(optionElements, name, storedValue, prefix);
+
+            optionbox.innerHTML = `<div class=${prefix}container>`;
+
+            if (optgroupElements.length) {
+                optionbox.innerHTML += this.optgroups(optgroupElements, name, storedValue, prefix);
+            } else {
+                optionbox.innerHTML += this.options(optionElements, name, storedValue, prefix);
+            }
+
+            optionbox.innerHTML += "</div>";
 
             select.insertAdjacentElement("beforebegin", optionbox);
 
@@ -32,14 +42,39 @@ const create = {
         return (optionboxElements);
     },
 
+    optgroups(optgroupElements, name, storedValue, prefix) {
+        let content = "";
+
+        [].forEach.call(optgroupElements, optgroup => {
+            let label = optgroup.getAttribute("label");
+            let classes = optgroup.getAttribute("class");
+            let styles = optgroup.getAttribute("style");
+            let optionElements = optgroup.querySelectorAll("option");
+
+            content += `<div 
+                class="${prefix}group ${classes != null ? classes : ""}"
+                style="${styles != null ? styles : ""}">`;
+
+            if (label) content += `<small class="${prefix}group-label">${label}</small>`;
+
+            content += this.options(optionElements, name, storedValue, prefix);
+
+            content += "</div>";
+        });
+
+        return content;
+    },
+
     options(optionElements, name, storedValue, prefix) {
-        let content = `<div class=${prefix}container>`;
+        let content = "";
 
         [].forEach.call(optionElements, option => {
-            let selected = this.preselected(storedValue, option);
+            let value = option.value;
+            let label = option.innerHTML;
             let alt = option.getAttribute("alt");
             let classes = option.getAttribute("class");
             let styles = option.getAttribute("style");
+            let selected = this.preselected(storedValue, option);
 
             content += `
                     <label 
@@ -49,9 +84,9 @@ const create = {
                         type="radio"
                         class="${prefix}radio"
                         name="${name}"
-                        value="${option.value}"
+                        value="${value}"
                         checked="${selected}">
-                        ${option.innerHTML}`;
+                        ${label}`;
 
             if (alt) {
                 content += `<small class="${prefix}alt">${alt}</small>`;
@@ -59,8 +94,6 @@ const create = {
 
             content += "</label>";
         });
-
-        content += "</div>";
 
         return content;
     },

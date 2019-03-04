@@ -11,6 +11,7 @@ const create = {
             let optgroupElements = select.querySelectorAll("optgroup");
             let optionElements = select.querySelectorAll("option");
             let optionbox = document.createElement("span");
+            let content = `<div class=${prefix}container>`;
 
             if (config.persist) {
                 storedValue = sessionStorage[config.persist + ">" + select.name];
@@ -21,15 +22,16 @@ const create = {
             optionbox.classList.add(prefix);
             styles != null && optionbox.setAttribute("style", styles);
 
-            optionbox.innerHTML = `<div class=${prefix}container>`;
 
             if (optgroupElements.length) {
-                optionbox.innerHTML += this.optgroups(optgroupElements, name, storedValue, prefix);
+                content += this.optgroups(optgroupElements, name, storedValue, prefix);
             } else {
-                optionbox.innerHTML += this.options(optionElements, name, storedValue, prefix);
+                content += this.options(optionElements, name, storedValue, prefix);
             }
 
-            optionbox.innerHTML += "</div>";
+            content += "</div>";
+
+            optionbox.innerHTML = content;
 
             select.insertAdjacentElement("beforebegin", optionbox);
 

@@ -1,0 +1,21 @@
+.optionbox- {
+    &.closed  {
+        .optionbox-item:not(.selected),
+        .optionbox-alt,
+        .optionbox-group-label {
+            max-height: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .optionbox-container {
+            overflow-y: hidden;
+        }
+
+        .optionbox-group {
+            display: inline;
+        }
+    }
+}

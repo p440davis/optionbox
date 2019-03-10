@@ -12,6 +12,6 @@ export default {
   output: {
     format: "iife",
     sourcemap: true,
-    file: "dist/optionbox.0.1.0.min.js"
+    file: "dist/optionbox.0.1.1.min.js"
   }
 };

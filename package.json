@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "rollup -c --watch",
-    "scss": "node-sass --output-style compressed --watch -o dist/css src/scss",
+    "scss": "node-sass --output-style compressed --watch -o dist src/scss",
     "test": "jest",
     "testwatch": "jest --watchAll"
   },

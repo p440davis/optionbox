@@ -1,0 +1,46 @@
+.optionbox-item {
+    display: block;
+    position: relative;
+    padding: 0.3em 0.5em 0.3em 2em;
+    text-align: left;
+    max-height: 4em;
+    transition: all $time;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0.6em;
+        left: 0.6em;
+        width: 0.6em;
+        height: 0.6em;
+        border-radius: 0.5em;
+        background-color: $mid;
+    }
+
+    &:hover::before {
+        background-color: $primary;
+        transition: all $time;
+    }
+
+    &:hover::after {
+        border-top-color: $primary;
+        transition: all $time;
+    }
+}
+
+.optionbox-radio {
+    /* hide visually but keep screen reader accessible */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+.optionbox-alt {
+    display: block;
+    max-height: 2em;
+    transition: all $time;
+}

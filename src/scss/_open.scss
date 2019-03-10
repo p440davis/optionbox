@@ -1,0 +1,25 @@
+.optionbox- {
+    display: inline-block;
+    vertical-align: top;
+    color: $dark;
+    background-color: $light;
+    border: solid 1px $mid;
+    overflow: hidden;
+}
+
+.optionbox-container {
+    max-height: 67vh;
+    overflow-y: auto;
+}
+
+.optionbox-group {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.optionbox-group-label {
+    display: block;
+    color: $mid;
+    padding: 0.3em 0.8em;
+    transition: all $time;
+}

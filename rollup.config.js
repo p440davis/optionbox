@@ -7,7 +7,6 @@ export default {
   ],
   output: {
     format: "iife",
-    sourcemap: true,
-    file: "dist/optionbox.js"
+    sourcemap: true
   }
 };

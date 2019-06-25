@@ -21,6 +21,10 @@
         "semi": [
             "error",
             "always"
+        ],
+        "indent": [
+            2,
+            "tab"
         ]
     }
 }

@@ -6,7 +6,7 @@ const get = {
     },
 
     config(userConfig) {
-        let config = Object.assign(this.defaultConfig, userConfig);
+        let config = (<any>Object).assign(this.defaultConfig, userConfig);
 
         if (!this.storageExists()) {
             config.persist = false;

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src/optionbox.ts",
+    "module": "esnext",
+    "noEmitOnError": true,
+    "outDir": "build",
+    "target": "ES5",
+    "sourceMap": true,
+    "removeComments": true,
+    "strict": false
+  },
+  "files": [
+    "src/optionbox.ts"
+  ]
+}

@@ -1,17 +1,13 @@
-import babel from "rollup-plugin-babel";
-import { eslint } from "rollup-plugin-eslint";
-import { uglify } from "rollup-plugin-uglify";
+import typescript from "rollup-plugin-typescript2";
 
 export default {
-  input: "src/optionbox.js",
+  input: "src/ts/optionbox.ts",
   plugins: [
-    eslint({ exclude: ["dist/**"] }),
-    babel({ exclude: "node_modules/**" }),
-    uglify()
+    typescript()
   ],
   output: {
     format: "iife",
     sourcemap: true,
-    file: "dist/optionbox.0.1.1.min.js"
+    file: "dist/optionbox.js"
   }
 };

@@ -1,8 +1,8 @@
 const get = {
     defaultConfig: {
         persist: window.location.pathname,
-        prefix: "optionbox-",
-        select: "select:not([multiple])"
+        prefix: 'optionbox-',
+        select: 'select:not([multiple])'
     },
 
     config(userConfig) {
@@ -29,13 +29,13 @@ const get = {
 
         if (elements.length) {
             [].forEach.call(elements, element => {
-                if (element.tagName === "SELECT") {
+                if (element.tagName === 'SELECT') {
                     selects.push(element);
                 } else
                     console.warn(
-                        "Optionbox warning: Your selection includes a <" +
+                        'Optionbox warning: Your selection includes a <' +
                         element.tagName.toLowerCase() +
-                        ">. Only <select> elements can be converted to an optionbox"
+                        '>. Only <select> elements can be converted to an optionbox'
                     );
             });
         }

@@ -1,4 +1,5 @@
 {
+    "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
         "es6": true
@@ -8,11 +9,18 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "rules": {
         "no-console": "off",
-        "quotes": ["error", "double"],
-        "semi": ["error", "always"]
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
     }
 }

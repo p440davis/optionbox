@@ -7,11 +7,15 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "tsc --watch",
-    "scss": "node-sass --output-style compressed --watch -o dist src/scss",
+    "dev": "npm run scss | npm run ts",
+    "eslint": "eslint src/ts/** --fix",
+    "rollup": "rollup -c",
+    "scss": "node-sass --output-style compressed -o dist src/scss",
     "test": "jest",
     "testwatch": "jest --watchAll",
-    "tsc": "tsc"
+    "ts": "npm run eslint && npm run rollup && npm run uglify",
+    "tsc": "tsc --rootDir src --outDir dist",
+    "uglify": "uglifyjs dist/optionbox.js --source-map url='dist/optionbox.map.js' --compress --mangle -o dist/optionbox.min.js"
   },
   "repository": {
     "type": "git",
@@ -33,16 +37,14 @@
   },
   "homepage": "https://github.com/p440davis/optionbox#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
     "jest": "^23.6.0",
     "node-sass": "^4.12.0",
-    "rollup": "^0.63.5",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-eslint": "^5.0.0",
-    "rollup-plugin-uglify": "^4.0.0",
-    "rollup-watch": "^4.3.1",
-    "typescript": "^3.5.2"
+    "rollup": "^1.16.2",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "^3.5.2",
+    "uglify-js": "^3.6.0"
   },
   "dependencies": {}
 }

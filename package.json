@@ -1,49 +1,72 @@
 {
-  "name": "optionbox",
-  "version": "0.1.1",
-  "description": "Effortlessly transform your <select> dropdowns into user-friendly option boxes and style them your way!",
-  "main": "docs/index.html",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "dev": "npm run scss | npm run ts",
-    "build": "npm run lint && npm run bundle && npm run minify",
-    "lint": "eslint src/**/*.ts --fix",
-    "bundle": "rollup -c -o dist/optionbox.js",
-    "minify": "uglifyjs dist/optionbox.js --source-map url='dist/optionbox.map.js' --compress --mangle -o dist/optionbox.min.js",
-    "scss": "node-sass --output-style compressed -o dist src/scss",
-    "test": "jest",
-    "testwatch": "jest --watchAll"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/p440davis/optionbox.git"
-  },
-  "keywords": [
-    "select",
-    "option",
-    "dropdown",
-    "radio",
-    "input",
-    "ui",
-    "ux"
-  ],
-  "author": "Pete Davis",
-  "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/p440davis/optionbox/issues"
-  },
-  "homepage": "https://github.com/p440davis/optionbox#readme",
-  "devDependencies": {
-    "@typescript-eslint/parser": "^1.11.0",
-    "eslint": "^6.0.1",
-    "jest": "^23.6.0",
-    "node-sass": "^4.12.0",
-    "rollup": "^1.16.2",
-    "rollup-plugin-typescript2": "^0.21.2",
-    "typescript": "^3.5.2",
-    "uglify-js": "^3.6.0"
-  },
-  "dependencies": {}
+	"name": "optionbox",
+	"version": "0.1.1",
+	"description": "Effortlessly transform your <select> dropdowns into user-friendly option boxes and style them your way!",
+	"main": "docs/index.html",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"watch": "npm-watch",
+		"build": "npm run css.build | npm run js.build",
+		"css.build": "npm run css.lint && npm run css.bundle",
+		"css.bundle": "postcss src/scss/optionbox-starter.scss --output dist/styles.min.css",
+		"css.lint": "stylelint \"src/**/*.scss\" --fix",
+		"js.build": "npm run js.lint && npm run js.bundle && npm run js.minify",
+		"js.lint": "eslint src/**/*.ts --fix",
+		"js.bundle": "rollup -c -o dist/optionbox.js",
+		"js.minify": "uglifyjs dist/optionbox.js --source-map url='dist/optionbox.map.js' --compress --mangle -o dist/optionbox.min.js",
+		"test": "jest",
+		"test.watch": "jest --watchAll"
+	},
+	"watch": {
+		"css.build": {
+			"patterns": [
+				"src/scss"
+			],
+			"extensions": "scss"
+		},
+		"js.build": {
+			"patterns": [
+				"src/ts"
+			],
+			"extensions": "ts"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/p440davis/optionbox.git"
+	},
+	"keywords": [
+		"select",
+		"option",
+		"dropdown",
+		"radio",
+		"input",
+		"ui",
+		"ux"
+	],
+	"author": "Pete Davis",
+	"license": "Unlicense",
+	"bugs": {
+		"url": "https://github.com/p440davis/optionbox/issues"
+	},
+	"homepage": "https://github.com/p440davis/optionbox#readme",
+	"devDependencies": {
+		"@csstools/postcss-sass": "^4.0.0",
+		"@typescript-eslint/parser": "^1.11.0",
+		"cssnano": "^4.1.10",
+		"eslint": "^6.0.1",
+		"jest": "^23.6.0",
+		"npm-watch": "^0.6.0",
+		"postcss-cli": "^6.1.2",
+		"postcss-preset-env": "^6.6.0",
+		"rollup": "^1.16.2",
+		"rollup-plugin-typescript2": "^0.21.2",
+		"stylelint": "^10.1.0",
+		"stylelint-config-standard": "^18.3.0",
+		"typescript": "^3.5.2",
+		"uglify-js": "^3.6.0"
+	},
+	"dependencies": {}
 }

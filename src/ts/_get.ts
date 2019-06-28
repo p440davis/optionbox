@@ -34,8 +34,8 @@ const get = {
 				} else
 					console.warn(
 						'Optionbox warning: Your selection includes a <' +
-                        element.tagName.toLowerCase() +
-                        '>. Only <select> elements can be converted to an optionbox'
+						element.tagName.toLowerCase() +
+						'>. Only <select> elements can be converted to an optionbox'
 					);
 			});
 		}
